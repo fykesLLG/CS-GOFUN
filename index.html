@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Case Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ЭКРАН 1: МАГАЗИН КЕЙСОВ -->
+    <div id="shopScreen" class="screen">
+        <div class="header">
+            <h2>Магазин кейсов CS2</h2>
+            <div class="balance">Баланс: <span id="userBalance">1000</span>$</div>
+        </div>
+        <div id="casesGrid" class="cases-grid">
+            <!-- Сюда JS загрузит реальные кейсы -->
+            <div class="loading">Загрузка кейсов из Steam...</div>
+        </div>
+    </div>
+
+    <!-- ЭКРАН 2: РУЛЕТКА ОТКРЫТИЯ -->
+    <div id="openScreen" class="screen hidden">
+        <div class="header">
+            <button id="backBtn">⬅ Назад в магазин</button>
+            <h2 id="currentCaseName">Открытие кейса</h2>
+        </div>
+        
+        <!-- Окно рулетки -->
+        <div class="roulette-wrapper">
+            <div class="pointer"></div>
+            <div id="rouletteLine" class="roulette-line">
+                <!-- Сюда JS нагенерирует ленту оружия -->
+            </div>
+        </div>
+
+        <div class="actions">
+            <button id="startSpinBtn">Крутить кейс</button>
+        </div>
+
+        <!-- Поп-ап с выигранным скином -->
+        <div id="winModal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Вы залутали:</h3>
+                <img id="winImage" src="" alt="skin">
+                <h4 id="winName">Название скина</h4>
+                <button id="closeModalBtn">Забрать в инвентарь</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
